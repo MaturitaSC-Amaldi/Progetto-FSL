@@ -1,0 +1,264 @@
+<!DOCTYPE html><html class="light" lang="it"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container": "#eceef0",
+                    "surface": "#f7f9fb",
+                    "primary-fixed": "#c9e6ff",
+                    "primary-fixed-dim": "#89ceff",
+                    "surface-container-high": "#e6e8ea",
+                    "surface-alt": "#F8FAFC",
+                    "tertiary-fixed": "#ffdcbd",
+                    "text-primary": "#0F172A",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-highest": "#e0e3e5",
+                    "surface-dim": "#d8dadc",
+                    "background-main": "#FFFFFF",
+                    "on-secondary-container": "#007165",
+                    "medical-blue": "#0EA5E9",
+                    "on-tertiary-fixed-variant": "#693c00",
+                    "inverse-primary": "#89ceff",
+                    "tertiary-fixed-dim": "#ffb86e",
+                    "on-secondary-fixed-variant": "#005047",
+                    "on-primary-fixed": "#001e2f",
+                    "on-error-container": "#93000a",
+                    "on-primary": "#ffffff",
+                    "inverse-on-surface": "#eff1f3",
+                    "outline": "#6e7881",
+                    "on-surface-variant": "#3e4850",
+                    "secondary-fixed": "#62fae3",
+                    "divider-faint": "#F1F5F9",
+                    "on-secondary-fixed": "#00201c",
+                    "on-primary-fixed-variant": "#004c6e",
+                    "secondary-fixed-dim": "#3cddc7",
+                    "clinical-teal": "#2DD4BF",
+                    "on-primary-container": "#003751",
+                    "surface-container-low": "#f2f4f6",
+                    "on-tertiary-container": "#4d2b00",
+                    "surface-bright": "#f7f9fb",
+                    "error": "#ba1a1a",
+                    "inverse-surface": "#2d3133",
+                    "tertiary": "#8a5100",
+                    "on-surface": "#191c1e",
+                    "secondary-container": "#62fae3",
+                    "on-background": "#191c1e",
+                    "on-error": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "primary-container": "#0ea5e9",
+                    "on-tertiary-fixed": "#2c1600",
+                    "background": "#f7f9fb",
+                    "surface-variant": "#e0e3e5",
+                    "tertiary-container": "#de8712",
+                    "on-secondary": "#ffffff",
+                    "primary": "#006591",
+                    "outline-variant": "#bec8d2",
+                    "ice-hover": "#F0F9FF",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-tint": "#006591",
+                    "secondary": "#006b5f",
+                    "text-secondary": "#64748B"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "section-gap": "80px",
+                    "container-max": "1100px",
+                    "row-padding": "16px",
+                    "base": "8px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "body-md": ["Inter"],
+                    "label-mono": ["Inter"],
+                    "display-lg-mobile": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-sm": ["Inter"],
+                    "display-lg": ["Inter"],
+                    "headline-md": ["Inter"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "1.6", "letterSpacing": "0px", "fontWeight": "400"}],
+                    "label-mono": ["14px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                    "display-lg-mobile": ["32px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.75", "letterSpacing": "0px", "fontWeight": "400"}],
+                    "headline-sm": ["18px", {"lineHeight": "1.5", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "display-lg": ["42px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "1.4", "letterSpacing": "0.02em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .row-hover-arrow {
+            transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .patient-row:hover .row-hover-arrow {
+            transform: translateX(4px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-main font-body-md text-text-primary antialiased">
+<!-- TopAppBar -->
+<header class="bg-background-main dark:bg-background border-b border-divider-faint dark:border-outline-variant docked full-width top-0 z-50 sticky">
+<div class="flex justify-between items-center w-full px-row-padding max-w-[1100px] mx-auto h-16">
+<div class="flex items-center gap-3 cursor-pointer transition-all duration-200">
+<span class="material-symbols-outlined text-medical-blue dark:text-primary-fixed-dim" data-icon="clinical_notes">clinical_notes</span>
+<span class="font-label-mono text-label-mono font-bold tracking-[0.2em] text-medical-blue">C&amp;S INFORMATICS</span>
+</div>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="text-medical-blue font-bold font-body-md text-body-md tracking-wider" href="#">Index</a>
+<a class="text-text-secondary dark:text-on-surface-variant font-body-md text-body-md tracking-wider hover:bg-ice-hover dark:hover:bg-surface-container-highest transition-colors px-2 py-1" href="#">Log Book</a>
+<a class="text-text-secondary dark:text-on-surface-variant font-body-md text-body-md tracking-wider hover:bg-ice-hover dark:hover:bg-surface-container-highest transition-colors px-2 py-1" href="#">Reports</a>
+</nav>
+<div class="cursor-pointer transition-all duration-200">
+<span class="material-symbols-outlined text-medical-blue dark:text-primary-fixed-dim" data-icon="account_circle">account_circle</span>
+</div>
+</div>
+</header>
+<main class="max-w-[1100px] mx-auto px-row-padding mb-section-gap">
+<!-- Hero Section -->
+<section class="py-16 md:py-24 border-b border-divider-faint">
+<div class="max-w-3xl">
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-text-primary mb-4 tracking-wider">Formazione Scuola Lavoro</h1>
+<p class="font-body-lg text-body-lg text-text-secondary border-l-2 border-medical-blue pl-6 italic">
+                    Verso la Medicina: Un percorso tra bit e biologia
+                </p>
+</div>
+</section>
+<!-- Bento Grid Feature (Analytical Context) -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-6 py-12">
+<div class="md:col-span-2 bg-surface-alt border border-divider-faint p-8 flex flex-col justify-end min-h-[320px] relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-[120px] text-medical-blue" data-icon="biotech">biotech</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-medical-blue mb-2">Research Analytics</h3>
+<p class="text-text-secondary max-w-md">Data-driven investigation merging computational precision with biological observation. A clinical repository for longitudinal study analysis.</p>
+</div>
+<div class="bg-background-main border border-divider-faint p-8 flex flex-col justify-between">
+<span class="material-symbols-outlined text-clinical-teal text-3xl" data-icon="monitoring">monitoring</span>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-text-primary mb-1">System Status</h3>
+<p class="font-label-mono text-label-mono text-text-secondary uppercase">Operational / 100%</p>
+</div>
+</div>
+</section>
+<!-- The Patient Index List -->
+<section class="mt-12">
+<div class="flex items-center justify-between mb-8">
+<h2 class="font-label-mono text-label-mono text-text-secondary uppercase tracking-widest">Archive Records</h2>
+<div class="flex gap-2">
+<span class="material-symbols-outlined text-clinical-teal" data-icon="filter_list">filter_list</span>
+<span class="font-label-mono text-label-mono text-text-secondary">Sort by Date</span>
+</div>
+</div>
+<div class="border border-divider-faint overflow-hidden">
+<!-- Header Row -->
+<div class="hidden md:flex items-center px-8 py-4 bg-surface-alt border-b border-divider-faint font-label-mono text-label-mono text-text-secondary uppercase">
+<div class="w-1/6">ID Code</div>
+<div class="w-1/6">Timestamp</div>
+<div class="w-3/6">Experience Title</div>
+<div class="w-1/6 text-right">Action</div>
+</div>
+<!-- Patient Row 1 -->
+<div class="patient-row flex flex-col md:flex-row items-start md:items-center px-8 py-6 bg-background-main hover:bg-ice-hover transition-colors cursor-pointer group">
+<div class="w-full md:w-1/6 font-label-mono text-label-mono text-text-secondary mb-2 md:mb-0">[PX-2024-001]</div>
+<div class="w-full md:w-1/6 text-text-secondary mb-2 md:mb-0">OCT 24, 2024</div>
+<div class="w-full md:w-3/6 font-headline-sm text-headline-sm text-medical-blue tracking-wide">Sintesi Proteica in Ambienti Simulati</div>
+<div class="w-full md:w-1/6 flex justify-end">
+<span class="material-symbols-outlined text-clinical-teal row-hover-arrow" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+<!-- Patient Row 2 -->
+<div class="patient-row flex flex-col md:flex-row items-start md:items-center px-8 py-6 bg-surface-alt hover:bg-ice-hover transition-colors cursor-pointer group">
+<div class="w-full md:w-1/6 font-label-mono text-label-mono text-text-secondary mb-2 md:mb-0">[PX-2024-042]</div>
+<div class="w-full md:w-1/6 text-text-secondary mb-2 md:mb-0">SEP 12, 2024</div>
+<div class="w-full md:w-3/6 font-headline-sm text-headline-sm text-medical-blue tracking-wide">Analisi Sequenziamento Genomico Cluster B</div>
+<div class="w-full md:w-1/6 flex justify-end">
+<span class="material-symbols-outlined text-clinical-teal row-hover-arrow" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+<!-- Patient Row 3 -->
+<div class="patient-row flex flex-col md:flex-row items-start md:items-center px-8 py-6 bg-background-main hover:bg-ice-hover transition-colors cursor-pointer group">
+<div class="w-full md:w-1/6 font-label-mono text-label-mono text-text-secondary mb-2 md:mb-0">[PX-2024-089]</div>
+<div class="w-full md:w-1/6 text-text-secondary mb-2 md:mb-0">AUG 05, 2024</div>
+<div class="w-full md:w-3/6 font-headline-sm text-headline-sm text-medical-blue tracking-wide">Morfologia Cellulare sotto Stress Termico</div>
+<div class="w-full md:w-1/6 flex justify-end">
+<span class="material-symbols-outlined text-clinical-teal row-hover-arrow" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+<!-- Patient Row 4 -->
+<div class="patient-row flex flex-col md:flex-row items-start md:items-center px-8 py-6 bg-surface-alt hover:bg-ice-hover transition-colors cursor-pointer group">
+<div class="w-full md:w-1/6 font-label-mono text-label-mono text-text-secondary mb-2 md:mb-0">[PX-2024-112]</div>
+<div class="w-full md:w-1/6 text-text-secondary mb-2 md:mb-0">JUL 20, 2024</div>
+<div class="w-full md:w-3/6 font-headline-sm text-headline-sm text-medical-blue tracking-wide">Integrazione Bio-Digitale Protesica</div>
+<div class="w-full md:w-1/6 flex justify-end">
+<span class="material-symbols-outlined text-clinical-teal row-hover-arrow" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+</div>
+<div class="mt-12 flex justify-center">
+<button class="px-8 py-3 border border-medical-blue text-medical-blue font-label-mono text-label-mono uppercase tracking-widest hover:bg-medical-blue hover:text-white transition-all duration-300 group">
+                    Load More Records
+                </button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-alt dark:bg-surface-container-low w-full py-12 border-t border-divider-faint dark:border-outline-variant">
+<div class="flex flex-col md:flex-row justify-between items-center max-w-[1100px] mx-auto px-row-padding">
+<div class="mb-6 md:mb-0">
+<span class="font-label-mono text-label-mono font-bold text-medical-blue tracking-widest uppercase">C&amp;S INFORMATICS</span>
+<p class="font-label-mono text-label-mono tracking-tighter text-text-secondary mt-2">© 2024 Clinical &amp; Scientific Informatics Portfolio</p>
+</div>
+<div class="flex gap-8">
+<a class="font-label-mono text-label-mono tracking-tighter text-text-secondary hover:text-clinical-teal transition-all duration-300 hover:underline decoration-clinical-teal underline-offset-4" href="#">Privacy Protocol</a>
+<a class="font-label-mono text-label-mono tracking-tighter text-text-secondary hover:text-clinical-teal transition-all duration-300 hover:underline decoration-clinical-teal underline-offset-4" href="#">Technical Specs</a>
+<a class="font-label-mono text-label-mono tracking-tighter text-text-secondary hover:text-clinical-teal transition-all duration-300 hover:underline decoration-clinical-teal underline-offset-4" href="#">Institutional Access</a>
+</div>
+</div>
+</footer>
+<!-- BottomNavBar (Mobile only) -->
+<nav class="fixed bottom-0 w-full z-50 bg-background-main dark:bg-background border-t border-divider-faint dark:border-outline-variant md:hidden">
+<div class="flex justify-around items-center w-full px-base pb-safe h-20">
+<a class="flex flex-col items-center justify-center text-medical-blue font-bold border-t-2 border-medical-blue pt-2 scale-95 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="database">database</span>
+<span class="font-label-mono text-label-mono uppercase tracking-widest mt-1">Index</span>
+</a>
+<a class="flex flex-col items-center justify-center text-text-secondary dark:text-on-surface-variant pt-2 scale-95 active:scale-90 transition-transform hover:text-clinical-teal" href="#">
+<span class="material-symbols-outlined" data-icon="history_edu">history_edu</span>
+<span class="font-label-mono text-label-mono uppercase tracking-widest mt-1">Log Book</span>
+</a>
+<a class="flex flex-col items-center justify-center text-text-secondary dark:text-on-surface-variant pt-2 scale-95 active:scale-90 transition-transform hover:text-clinical-teal" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="font-label-mono text-label-mono uppercase tracking-widest mt-1">Reports</span>
+</a>
+<a class="flex flex-col items-center justify-center text-text-secondary dark:text-on-surface-variant pt-2 scale-95 active:scale-90 transition-transform hover:text-clinical-teal" href="#">
+<span class="material-symbols-outlined" data-icon="patient_list">patient_list</span>
+<span class="font-label-mono text-label-mono uppercase tracking-widest mt-1">Profile</span>
+</a>
+</div>
+</nav>
+
+
+</body></html>
